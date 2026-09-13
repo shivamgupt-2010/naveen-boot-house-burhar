@@ -1,52 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:geo="http://www.google.com/geo/schemas/sitemap-geo/0.5">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://naveenboothouseburhar.com/</loc>
+    <loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://naveenboothouseburhar.com/assets/hero_banner.png</image:loc>
+      <image:loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/assets/hero_banner.png</image:loc>
       <image:title>Naveen Boot House Burhar - Best Footwear Store</image:title>
       <image:caption>Top rated shoes and footwear showroom in Railway Market, Burhar, Shahdol</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://naveenboothouseburhar.com/assets/skechers_runner.png</image:loc>
-      <image:title>Skechers &amp; Sports Shoes - Naveen Boot House Burhar</image:title>
+      <image:loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/assets/crocs_pink.png</image:loc>
+      <image:title>Crocs Swiftwater &amp; Capri Sandal Collection - Naveen Boot House Burhar</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://naveenboothouseburhar.com/assets/leather_boot.png</image:loc>
-      <image:title>Woodland Leather Boots - Naveen Boot House Burhar</image:title>
+      <image:loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/assets/woodland_boot.png</image:loc>
+      <image:title>Woodland Leather Boots &amp; Outdoor Footwear Burhar</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://naveenboothouseburhar.com/assets/formal_oxford.png</image:loc>
-      <image:title>Men's Genuine Leather Formal Oxford Shoes</image:title>
+      <image:loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/assets/nike_flex.png</image:loc>
+      <image:title>Nike Flex Control &amp; Sports Training Shoes</image:title>
     </image:image>
-  </url>
-  <url>
-    <loc>https://naveenboothouseburhar.com/#products</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://naveenboothouseburhar.com/#about</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://naveenboothouseburhar.com/#reviews</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://naveenboothouseburhar.com/#contact</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/assets/skechers_gowalk.png</image:loc>
+      <image:title>Skechers Go Walk Flex Running Shoes</image:title>
+    </image:image>
   </url>
 </urlset>
