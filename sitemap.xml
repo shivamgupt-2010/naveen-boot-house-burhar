@@ -1,30 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
   <url>
     <loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/index.html</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/assets/hero_banner.png</image:loc>
-      <image:title>Naveen Boot House Burhar - Best Footwear Store</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/assets/crocs_pink.png</image:loc>
-      <image:title>Crocs Swiftwater &amp; Capri Sandal Collection</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/assets/woodland_boot.png</image:loc>
-      <image:title>Woodland Leather Boots Burhar</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/assets/nike_flex.png</image:loc>
-      <image:title>Nike Flex Control Training Shoes</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar/</loc>
+    <loc>https://shivamgupt-2010.github.io/naveen-boot-house-burhar</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
