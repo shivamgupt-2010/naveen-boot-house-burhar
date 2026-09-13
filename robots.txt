@@ -13,4 +13,4 @@ Allow: /
 User-agent: Googlebot-Image
 Allow: /assets/
 
-Sitemap: https://shivamgupt-2010.github.io/naveen-boot-house-burhar/sitemap.xml
+Sitemap: https://naveenboothouseburhar.vercel.app/sitemap.xml
