@@ -353,7 +353,7 @@ function setupEventListeners() {
       const msg = document.getElementById("form-message").value;
 
       const waMsg = `Hi Naveen Boot House Burhar! I am ${name} (${phone}). Inquiry: ${msg}`;
-      const url = `https://wa.me/919425182411?text=${encodeURIComponent(waMsg)}`;
+      const url = `https://wa.me/917000451211?text=${encodeURIComponent(waMsg)}`;
       window.open(url, '_blank');
     });
   }
