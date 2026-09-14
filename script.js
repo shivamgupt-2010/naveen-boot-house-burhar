@@ -55,56 +55,6 @@ const PRODUCTS = [
     inStock: true
   },
 
-  // --- BATA FLOATERS (Featured) ---
-  {
-    id: 4,
-    title: "Bata Weinbrenner Brown Floaters for Men (F861494200)",
-    category: "bata",
-    categoryLabel: "Bata Floaters",
-    brand: "Bata Weinbrenner",
-    price: 1260,
-    oldPrice: 1300,
-    rating: 4.8,
-    reviewsCount: 65,
-    badge: "Weinbrenner Leather",
-    image: "assets/bata_floaters.png",
-    description: "Heavy-duty Bata Weinbrenner brown outdoor floaters for men with synthetic leather upper and high-grip rubber sole.",
-    sizes: [6, 7, 8, 9, 10],
-    inStock: true
-  },
-  {
-    id: 5,
-    title: "Bata Power Grey Floaters for Men (F861517600)",
-    category: "bata",
-    categoryLabel: "Bata Floaters",
-    brand: "Bata Power",
-    price: 775,
-    oldPrice: 799,
-    rating: 4.7,
-    reviewsCount: 82,
-    badge: "Bata Power",
-    image: "assets/bata_floaters.png",
-    description: "Bata Power grey floaters for men engineered with lightweight EVA midsole and velcro adjustment straps.",
-    sizes: [6, 7, 8, 9, 10],
-    inStock: true
-  },
-  {
-    id: 6,
-    title: "Bata Power Blue Floaters for Men (F861983600)",
-    category: "bata",
-    categoryLabel: "Bata Floaters",
-    brand: "Bata Power",
-    price: 875,
-    oldPrice: 899,
-    rating: 4.8,
-    reviewsCount: 74,
-    badge: "Bata Power",
-    image: "assets/bata_floaters.png",
-    description: "Bata Power sporty navy blue floaters with quick-dry synthetic webbing and padded ankle support.",
-    sizes: [7, 8, 9, 10],
-    inStock: true
-  },
-
   // --- NIKE SPORTS (Featured) ---
   {
     id: 7,
