@@ -1,9 +1,11 @@
 /* ==========================================================================
-   Naveen Boot House - Justdial Verified Product Catalog & Application Logic
+   Naveen Boot House - 14 Featured Active Products (Justdial Verified)
+   Store Tagline: Complete Family Footwear Since 1973 | Multi-branded Store
+   Store Guarantee: Deals Only in 100% Originals (NO COPIES)
    ========================================================================== */
 
 const PRODUCTS = [
-  // --- CROCS (12 Listings) ---
+  // --- CROCS (Featured) ---
   {
     id: 1,
     title: "Crocs Swiftwater Paradise Pink/White Women Sandal [203998-6NR]",
@@ -14,7 +16,7 @@ const PRODUCTS = [
     oldPrice: 2995,
     rating: 4.9,
     reviewsCount: 48,
-    badge: "Justdial Listed",
+    badge: "100% Original Crocs",
     image: "assets/crocs_pink.png",
     description: "Original Crocs Swiftwater paradise pink & white women sandal. Lightweight, water-friendly Croslite foam construction with secure heel strap.",
     sizes: [3, 3.5, 4],
@@ -38,38 +40,6 @@ const PRODUCTS = [
   },
   {
     id: 3,
-    title: "Crocs Swiftwater Black/White Women Flip [204974-066]",
-    category: "crocs",
-    categoryLabel: "Crocs Collection",
-    brand: "Crocs",
-    price: 1995,
-    oldPrice: 2495,
-    rating: 4.8,
-    reviewsCount: 29,
-    badge: "Original Crocs",
-    image: "assets/crocs_flip.png",
-    description: "Classic Crocs Swiftwater black and white flip flop for women. Quick-drying, lightweight, and contoured footbed.",
-    sizes: [4, 9],
-    inStock: true
-  },
-  {
-    id: 4,
-    title: "Crocs Swiftwater Tropical Teal/Light Grey Women Sandal [203998-3O2]",
-    category: "crocs",
-    categoryLabel: "Crocs Collection",
-    brand: "Crocs",
-    price: 2495,
-    oldPrice: 2995,
-    rating: 4.9,
-    reviewsCount: 41,
-    badge: "Best Seller",
-    image: "assets/crocs_pink.png",
-    description: "Tropical teal & light grey Crocs Swiftwater sandal for women. Soft flexible straps and siped outsoles for wet traction.",
-    sizes: [4, 5, 6, 7],
-    inStock: true
-  },
-  {
-    id: 5,
     title: "Crocs Capri V Navy/Pearl White Women Flip [202502-464]",
     category: "crocs",
     categoryLabel: "Crocs Collection",
@@ -84,42 +54,10 @@ const PRODUCTS = [
     sizes: [5, 8],
     inStock: true
   },
-  {
-    id: 6,
-    title: "Crocs Capri Shimmer Xband Oyster/Cobblestone Women Sandal [204908-1C4]",
-    category: "crocs",
-    categoryLabel: "Crocs Collection",
-    brand: "Crocs",
-    price: 3495,
-    oldPrice: 3995,
-    rating: 4.8,
-    reviewsCount: 24,
-    badge: "Shimmer Edition",
-    image: "assets/crocs_pink.png",
-    description: "Crocs Capri Shimmer cross-band sandal in oyster & cobblestone finish with shimmer straps and soft microfiber lining.",
-    sizes: [4],
-    inStock: true
-  },
-  {
-    id: 7,
-    title: "Crocs Capri Shimmer Xband Black Women Sandal [204908-060]",
-    category: "crocs",
-    categoryLabel: "Crocs Collection",
-    brand: "Crocs",
-    price: 3495,
-    oldPrice: 3995,
-    rating: 4.9,
-    reviewsCount: 37,
-    badge: "Shimmer Edition",
-    image: "assets/crocs_pink.png",
-    description: "Sleek black Crocs Capri Shimmer Xband women sandal. Dual Crocs Comfort with soft massage pods on footbed.",
-    sizes: [3],
-    inStock: true
-  },
 
-  // --- BATA FLOATERS (16 Listings) ---
+  // --- BATA FLOATERS (Featured) ---
   {
-    id: 8,
+    id: 4,
     title: "Bata Weinbrenner Brown Floaters for Men (F861494200)",
     category: "bata",
     categoryLabel: "Bata Floaters",
@@ -135,7 +73,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 9,
+    id: 5,
     title: "Bata Power Grey Floaters for Men (F861517600)",
     category: "bata",
     categoryLabel: "Bata Floaters",
@@ -151,7 +89,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 10,
+    id: 6,
     title: "Bata Power Blue Floaters for Men (F861983600)",
     category: "bata",
     categoryLabel: "Bata Floaters",
@@ -166,58 +104,10 @@ const PRODUCTS = [
     sizes: [7, 8, 9, 10],
     inStock: true
   },
-  {
-    id: 11,
-    title: "Bata Power Brown Floaters for Men (F861420900)",
-    category: "bata",
-    categoryLabel: "Bata Floaters",
-    brand: "Bata Power",
-    price: 959,
-    oldPrice: 999,
-    rating: 4.8,
-    reviewsCount: 91,
-    badge: "Bata Power",
-    image: "assets/bata_floaters.png",
-    description: "Rugged Bata Power brown floaters for men with shock-absorption heel cushioning and anti-slip tread pattern.",
-    sizes: [6, 7, 8, 9, 10],
-    inStock: true
-  },
-  {
-    id: 12,
-    title: "Bata Brown Floaters for Men (Pr-1468941)",
-    category: "bata",
-    categoryLabel: "Bata Floaters",
-    brand: "Bata",
-    price: 395,
-    oldPrice: 450,
-    rating: 4.6,
-    reviewsCount: 112,
-    badge: "Super Saver",
-    image: "assets/bata_floaters.png",
-    description: "Budget-friendly durable Bata brown floaters for daily home and local town wear in Burhar.",
-    sizes: [6, 7, 8, 9],
-    inStock: true
-  },
-  {
-    id: 13,
-    title: "Bata Power Black Floaters for Men",
-    category: "bata",
-    categoryLabel: "Bata Floaters",
-    brand: "Bata Power",
-    price: 785,
-    oldPrice: 799,
-    rating: 4.7,
-    reviewsCount: 58,
-    badge: "Bata Power",
-    image: "assets/bata_floaters.png",
-    description: "All-black Bata Power floaters for active men. Water-resistant synthetic material with heavy-duty soles.",
-    sizes: [6, 7, 8, 9, 10],
-    inStock: true
-  },
 
-  // --- NIKE SPORTS SHOES (11 Listings) ---
+  // --- NIKE SPORTS (Featured) ---
   {
-    id: 14,
+    id: 7,
     title: "Nike Dark Blue Flex Control TR3 Training Shoes [AJ5911-400]",
     category: "nike",
     categoryLabel: "Nike Sports",
@@ -233,7 +123,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 15,
+    id: 8,
     title: "Nike Flex Control TR4 Synthetic Black/White Training Shoes",
     category: "nike",
     categoryLabel: "Nike Sports",
@@ -249,7 +139,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 16,
+    id: 9,
     title: "Nike Synthetic Varsity Compete Trainer Black/White",
     category: "nike",
     categoryLabel: "Nike Sports",
@@ -264,58 +154,10 @@ const PRODUCTS = [
     sizes: [6, 7, 8, 9, 10],
     inStock: true
   },
-  {
-    id: 17,
-    title: "Nike Unisex Kid's Jr Obra 2 Club FG Football Shoes [AH7314-080]",
-    category: "nike",
-    categoryLabel: "Nike Sports",
-    brand: "Nike Football",
-    price: 3295,
-    oldPrice: 3895,
-    rating: 4.9,
-    reviewsCount: 42,
-    badge: "Football Cleats",
-    image: "assets/nike_flex.png",
-    description: "Official Nike Jr Obra 2 Club FG Firm-Ground football cleats for kids. Synthetic leather upper with molded studs for pitch speed.",
-    sizes: [3.5, 4, 5, 5.5],
-    inStock: true
-  },
-  {
-    id: 18,
-    title: "Nike Varsity Compete Trainer Pure Platinum/Signal Blue",
-    category: "nike",
-    categoryLabel: "Nike Sports",
-    brand: "Nike",
-    price: 4295,
-    oldPrice: 4995,
-    rating: 4.8,
-    reviewsCount: 36,
-    badge: "Platinum Series",
-    image: "assets/nike_flex.png",
-    description: "Ultra-lightweight 249g Nike Varsity Compete trainer in platinum and signal blue colorway.",
-    sizes: [7, 8, 9, 10],
-    inStock: true
-  },
-  {
-    id: 19,
-    title: "Nike Women's Lace-Up Low-Top Basketball Shoes [AQ1778]",
-    category: "nike",
-    categoryLabel: "Nike Sports",
-    brand: "Nike Women",
-    price: 4595,
-    oldPrice: 5295,
-    rating: 4.9,
-    reviewsCount: 29,
-    badge: "Women's Hoops",
-    image: "assets/nike_flex.png",
-    description: "Nike low-top basketball shoes for women with rubber cupsole traction and impact-cushioned Phylon foam midsole.",
-    sizes: [5, 6, 7, 8],
-    inStock: true
-  },
 
-  // --- BRANDED LEATHER & SNEAKERS (Skechers, Woodland, Red Chief) ---
+  // --- SKECHERS, WOODLAND & RED CHIEF LEATHER (Featured) ---
   {
-    id: 20,
+    id: 10,
     title: "Skechers Go Walk Flex Athletic Sneaker",
     category: "skechers",
     categoryLabel: "Skechers",
@@ -324,14 +166,14 @@ const PRODUCTS = [
     oldPrice: 4999,
     rating: 4.9,
     reviewsCount: 84,
-    badge: "Skechers Original",
+    badge: "100% Original Skechers",
     image: "assets/skechers_gowalk.png",
     description: "Authentic Skechers Go Walk Flex with Goga Mat cushioning and breathable mesh for daily running & walking.",
     sizes: [6, 7, 8, 9, 10, 11],
     inStock: true
   },
   {
-    id: 21,
+    id: 11,
     title: "Woodland Pro-Trek Genuine Leather Boot",
     category: "woodland",
     categoryLabel: "Woodland Boots",
@@ -340,14 +182,14 @@ const PRODUCTS = [
     oldPrice: 5295,
     rating: 4.9,
     reviewsCount: 92,
-    badge: "Woodland Original",
+    badge: "Original Woodland Leather",
     image: "assets/woodland_boot.png",
     description: "Heavy-duty original Woodland nubuck leather outdoor boot with anti-skid rubber lug sole.",
     sizes: [6, 7, 8, 9, 10],
     inStock: true
   },
   {
-    id: 22,
+    id: 12,
     title: "Red Chief Genuine Rust Leather Casual Boot",
     category: "redchief",
     categoryLabel: "Red Chief Leather",
@@ -356,10 +198,44 @@ const PRODUCTS = [
     oldPrice: 3895,
     rating: 4.8,
     reviewsCount: 76,
-    badge: "Red Chief Leather",
+    badge: "Original Red Chief Leather",
     image: "assets/redchief_leather.png",
     description: "Hand-finished pure leather derby boot by Red Chief with shock-absorbing PU sole.",
     sizes: [7, 8, 9, 10, 11],
+    inStock: true
+  },
+
+  // --- WOMEN & KIDS ETHNIC (Featured) ---
+  {
+    id: 13,
+    title: "Royal Velvet Zari Handcrafted Wedding Mojari",
+    category: "women",
+    categoryLabel: "Women's Collection",
+    brand: "Traditional Ethnic",
+    price: 1599,
+    oldPrice: 1999,
+    rating: 4.9,
+    reviewsCount: 68,
+    badge: "Handmade Zari Work",
+    image: "assets/ethnic_mojari.png",
+    description: "Authentic Rajasthani velvet Punjabi Mojari Jutti embellished with genuine metallic Zari thread work.",
+    sizes: [4, 5, 6, 7, 8],
+    inStock: true
+  },
+  {
+    id: 14,
+    title: "Action School Time Black Leather Shoes",
+    category: "kids",
+    categoryLabel: "Kids Collection",
+    brand: "Action School Time",
+    price: 899,
+    oldPrice: 1099,
+    rating: 4.9,
+    reviewsCount: 130,
+    badge: "Original Action Shoes",
+    image: "assets/action_school.png",
+    description: "Official Action School Time black formal leather school shoes with velcro straps.",
+    sizes: [1, 2, 3, 4, 5],
     inStock: true
   }
 ];
@@ -403,7 +279,7 @@ function renderProducts() {
   if (filtered.length === 0) {
     grid.innerHTML = `
       <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
-        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 12px;">No Justdial verified footwear items found matching "${currentSearch}".</p>
+        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 12px;">No footwear items found matching "${currentSearch}".</p>
         <button class="btn-secondary" onclick="resetFilters()">Reset Search &amp; Filters</button>
       </div>
     `;
@@ -414,7 +290,7 @@ function renderProducts() {
     <article class="product-card">
       <span class="card-badge">${p.badge}</span>
       <div class="card-image-box">
-        <img src="${p.image}" alt="${p.title} - Naveen Boot House Burhar Justdial" loading="lazy" />
+        <img src="${p.image}" alt="${p.title} - Naveen Boot House Burhar" loading="lazy" />
         <button class="quick-view-btn" onclick="openQuickView(${p.id})">Quick View</button>
       </div>
       <div class="card-details">
@@ -422,7 +298,7 @@ function renderProducts() {
         <h3 class="product-title">${p.title}</h3>
         <div class="product-rating">
           <span>★ ${p.rating}</span>
-          <span class="rating-count">(${p.reviewsCount} Justdial reviews)</span>
+          <span class="rating-count">(${p.reviewsCount} verified reviews)</span>
         </div>
         <div class="price-row">
           <span class="curr-price">₹${p.price}</span>
@@ -515,7 +391,7 @@ function openQuickView(id) {
 
   modalImg.src = selectedProduct.image;
   modalTitle.textContent = selectedProduct.title;
-  modalBrand.textContent = `${selectedProduct.brand} • ${selectedProduct.categoryLabel} • Justdial Verified`;
+  modalBrand.textContent = `${selectedProduct.brand} • ${selectedProduct.categoryLabel} • 100% Original`;
   modalPrice.textContent = `₹${selectedProduct.price}`;
   modalOldPrice.textContent = `₹${selectedProduct.oldPrice}`;
   modalDesc.textContent = selectedProduct.description;
@@ -541,13 +417,13 @@ function closeModal() {
 
 function modalWhatsAppCheckout() {
   if (!selectedProduct) return;
-  const msg = `Hi Naveen Boot House Burhar! I want to order from your Justdial Catalog:\n- *${selectedProduct.title}*\n- Size: UK/IND ${selectedSize}\n- Price: ₹${selectedProduct.price}\nPlease confirm availability at Railway Market Burhar.`;
+  const msg = `Hi Naveen Boot House Burhar! I want to order 100% Original:\n- *${selectedProduct.title}*\n- Size: UK/IND ${selectedSize}\n- Price: ₹${selectedProduct.price}\nPlease confirm availability at Railway Market Burhar.`;
   const url = `https://wa.me/919425182411?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
 }
 
 function directWhatsAppOrder(title, price) {
-  const msg = `Hi Naveen Boot House Burhar! I want to order Justdial listed item: *${title}* for ₹${price}. Please share available sizes.`;
+  const msg = `Hi Naveen Boot House Burhar! I want to order 100% Original *${title}* for ₹${price}. Please share size options.`;
   const url = `https://wa.me/919425182411?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
 }
