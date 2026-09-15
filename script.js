@@ -4,191 +4,7 @@
    Store Guarantee: Deals Only in 100% Originals (NO COPIES)
    ========================================================================== */
 
-const PRODUCTS = [
-  // --- CROCS (Featured) ---
-  {
-    id: 1,
-    title: "Crocs Swiftwater Paradise Pink/White Women Sandal [203998-6NR]",
-    category: "crocs",
-    categoryLabel: "Crocs Collection",
-    brand: "Crocs",
-    price: 2495,
-    oldPrice: 2995,
-    rating: 4.9,
-    reviewsCount: 48,
-    badge: "100% Original Crocs",
-    image: "assets/crocs_pink.png",
-    description: "Original Crocs Swiftwater paradise pink & white women sandal. Lightweight, water-friendly Croslite foam construction with secure heel strap.",
-    sizes: [3, 3.5, 4],
-    inStock: true
-  },
-  {
-    id: 2,
-    title: "Crocs Swiftwater Tropical Teal/Pearl White Women Flip [204974-31I]",
-    category: "crocs",
-    categoryLabel: "Crocs Collection",
-    brand: "Crocs",
-    price: 1995,
-    oldPrice: 2495,
-    rating: 4.8,
-    reviewsCount: 32,
-    badge: "Original Crocs",
-    image: "assets/crocs_flip.png",
-    description: "Crocs Swiftwater tropical teal & pearl white women flip flops. Flexible TPU upper strap with Iconic Crocs Comfort cushioning.",
-    sizes: [3],
-    inStock: true
-  },
-  {
-    id: 3,
-    title: "Crocs Capri V Navy/Pearl White Women Flip [202502-464]",
-    category: "crocs",
-    categoryLabel: "Crocs Collection",
-    brand: "Crocs",
-    price: 3495,
-    oldPrice: 3995,
-    rating: 4.9,
-    reviewsCount: 53,
-    badge: "Capri V Comfort",
-    image: "assets/crocs_flip.png",
-    description: "Premium Crocs Capri V navy blue and pearl white flip flop with real leather straps and Dual Crocs Comfort deep heel cup.",
-    sizes: [5, 8],
-    inStock: true
-  },
-
-  // --- NIKE SPORTS (Featured) ---
-  {
-    id: 7,
-    title: "Nike Dark Blue Flex Control TR3 Training Shoes [AJ5911-400]",
-    category: "nike",
-    categoryLabel: "Nike Sports",
-    brand: "Nike",
-    price: 3995,
-    oldPrice: 4995,
-    rating: 4.9,
-    reviewsCount: 67,
-    badge: "Original Nike",
-    image: "assets/nike_flex.png",
-    description: "Authentic Nike Flex Control TR3 dark blue training shoes. Lightweight mesh upper with midfoot strap for lockdown support.",
-    sizes: [7, 8, 9, 10, 11],
-    inStock: true
-  },
-  {
-    id: 8,
-    title: "Nike Flex Control TR4 Synthetic Black/White Training Shoes",
-    category: "nike",
-    categoryLabel: "Nike Sports",
-    brand: "Nike",
-    price: 4495,
-    oldPrice: 5495,
-    rating: 4.9,
-    reviewsCount: 88,
-    badge: "TR4 Edition",
-    image: "assets/nike_flex.png",
-    description: "Nike Flex Control TR4 black and dark smoke grey training shoes. Engineered flex grooves and deep rubber traction tread.",
-    sizes: [7, 8, 9, 10, 11],
-    inStock: true
-  },
-  {
-    id: 9,
-    title: "Nike Synthetic Varsity Compete Trainer Black/White",
-    category: "nike",
-    categoryLabel: "Nike Sports",
-    brand: "Nike",
-    price: 3795,
-    oldPrice: 4295,
-    rating: 4.8,
-    reviewsCount: 54,
-    badge: "Original Nike",
-    image: "assets/nike_flex.png",
-    description: "Nike Varsity Compete Trainer with durable rubber sole, breathable mesh, and lateral webbing for weightlifting & cardio.",
-    sizes: [6, 7, 8, 9, 10],
-    inStock: true
-  },
-
-  // --- SKECHERS, WOODLAND & RED CHIEF LEATHER (Featured) ---
-  {
-    id: 10,
-    title: "Skechers Go Walk Flex Athletic Sneaker",
-    category: "skechers",
-    categoryLabel: "Skechers",
-    brand: "Skechers",
-    price: 3999,
-    oldPrice: 4999,
-    rating: 4.9,
-    reviewsCount: 84,
-    badge: "100% Original Skechers",
-    image: "assets/skechers_gowalk.png",
-    description: "Authentic Skechers Go Walk Flex with Goga Mat cushioning and breathable mesh for daily running & walking.",
-    sizes: [6, 7, 8, 9, 10, 11],
-    inStock: true
-  },
-  {
-    id: 11,
-    title: "Woodland Pro-Trek Genuine Leather Boot",
-    category: "woodland",
-    categoryLabel: "Woodland Boots",
-    brand: "Woodland",
-    price: 4495,
-    oldPrice: 5295,
-    rating: 4.9,
-    reviewsCount: 92,
-    badge: "Original Woodland Leather",
-    image: "assets/woodland_boot.png",
-    description: "Heavy-duty original Woodland nubuck leather outdoor boot with anti-skid rubber lug sole.",
-    sizes: [6, 7, 8, 9, 10],
-    inStock: true
-  },
-  {
-    id: 12,
-    title: "Red Chief Genuine Rust Leather Casual Boot",
-    category: "redchief",
-    categoryLabel: "Red Chief Leather",
-    brand: "Red Chief",
-    price: 3295,
-    oldPrice: 3895,
-    rating: 4.8,
-    reviewsCount: 76,
-    badge: "Original Red Chief Leather",
-    image: "assets/redchief_leather.png",
-    description: "Hand-finished pure leather derby boot by Red Chief with shock-absorbing PU sole.",
-    sizes: [7, 8, 9, 10, 11],
-    inStock: true
-  },
-
-  // --- WOMEN & KIDS ETHNIC (Featured) ---
-  {
-    id: 13,
-    title: "Royal Velvet Zari Handcrafted Wedding Mojari",
-    category: "women",
-    categoryLabel: "Women's Collection",
-    brand: "Traditional Ethnic",
-    price: 1599,
-    oldPrice: 1999,
-    rating: 4.9,
-    reviewsCount: 68,
-    badge: "Handmade Zari Work",
-    image: "assets/ethnic_mojari.png",
-    description: "Authentic Rajasthani velvet Punjabi Mojari Jutti embellished with genuine metallic Zari thread work.",
-    sizes: [4, 5, 6, 7, 8],
-    inStock: true
-  },
-  {
-    id: 14,
-    title: "Action School Time Black Leather Shoes",
-    category: "kids",
-    categoryLabel: "Kids Collection",
-    brand: "Action School Time",
-    price: 899,
-    oldPrice: 1099,
-    rating: 4.9,
-    reviewsCount: 130,
-    badge: "Original Action Shoes",
-    image: "assets/action_school.png",
-    description: "Official Action School Time black formal leather school shoes with velcro straps.",
-    sizes: [1, 2, 3, 4, 5],
-    inStock: true
-  }
-];
+let PRODUCTS = [];
 
 // Active State
 let currentCategory = "all";
@@ -198,7 +14,16 @@ let selectedProduct = null;
 let selectedSize = null;
 
 // DOM Initialization
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const response = await fetch('products.json');
+    if (response.ok) {
+      PRODUCTS = await response.json();
+    }
+  } catch (error) {
+    console.error("Failed to fetch products:", error);
+  }
+  
   renderProducts();
   setupEventListeners();
   setupScrollEffects();
