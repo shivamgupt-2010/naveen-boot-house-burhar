@@ -392,9 +392,14 @@
 
         <!-- Controls: Search & Category Tabs -->
         <div class="catalog-controls">
-          <div class="search-bar-wrapper">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" id="search-input" class="search-input" placeholder="Search shoes, brands (e.g. Skechers, Woodland, Leather, Heels)..." />
+          <div style="display: flex; gap: 15px; width: 100%;">
+            <div class="search-bar-wrapper" style="flex-grow: 1;">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" id="search-input" class="search-input" placeholder="Search shoes, brands (e.g. Skechers, Woodland, Leather, Heels)..." style="width: 100%;" />
+            </div>
+            <a href="manage.html" class="btn-secondary" style="display: flex; align-items: center; justify-content: center; padding: 0 24px; white-space: nowrap;" title="Manage Products">
+              <i class="fas fa-cog" style="margin-right: 8px;"></i> Manage
+            </a>
           </div>
 
           <div class="category-tabs" id="category-tab-list">
