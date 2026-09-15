@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Products - Naveen Boot House</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="manage.css" />
+</head>
+<body>
+
+  <!-- Password Overlay -->
+  <div id="auth-overlay" class="auth-overlay active">
+    <div class="auth-card glass-panel">
+      <div class="auth-icon"><i class="fas fa-lock"></i></div>
+      <h2>Admin Login</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">Enter the password to manage products.</p>
+      <input type="password" id="auth-password" class="form-control" placeholder="Password..." />
+      <button id="auth-submit" class="btn-primary" style="width: 100%; margin-top: 15px;">Login</button>
+      <div id="auth-error" class="auth-error">Incorrect password. Please try again.</div>
+      <a href="index.html" class="btn-secondary" style="display: block; text-align: center; margin-top: 15px;">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard -->
+  <div id="admin-dashboard" class="admin-dashboard">
+    <header class="admin-header glass-panel">
+      <div>
+        <h1 style="font-family: var(--font-heading);"><i class="fas fa-cogs"></i> Manage Products</h1>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Add, edit, or remove products. Max 25 allowed.</p>
+      </div>
+      <div class="admin-actions">
+        <span id="product-count" class="product-count">0 / 25 Products</span>
+        <button id="add-new-btn" class="btn-primary"><i class="fas fa-plus"></i> Add New Product</button>
+        <button id="save-live-btn" class="btn-whatsapp-order" style="padding: 10px 20px;"><i class="fas fa-cloud-upload-alt"></i> Save to Live Website</button>
+        <a href="index.html" class="btn-secondary" style="padding: 10px 20px;"><i class="fas fa-home"></i> Home</a>
+      </div>
+    </header>
+
+    <div class="admin-container">
+      <div id="products-list" class="products-list-grid">
+        <!-- Products injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Modal (Add/Edit) -->
+  <div id="product-modal" class="modal-overlay">
+    <div class="modal-content admin-modal-content">
+      <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+      <h2 id="modal-title-text" style="margin-bottom: 20px;"><i class="fas fa-box"></i> Add Product</h2>
+      
+      <form id="product-form" class="product-form">
+        <input type="hidden" id="field-id" />
+        
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" id="field-title" class="form-control" required placeholder="e.g. Skechers Go Walk" />
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Brand</label>
+            <input type="text" id="field-brand" class="form-control" required placeholder="e.g. Skechers" />
+          </div>
+          <div class="form-group">
+            <label>Category ID</label>
+            <select id="field-category" class="form-control">
+              <option value="nike">Nike Sports</option>
+              <option value="adidas">Adidas</option>
+              <option value="skechers">Skechers</option>
+              <option value="woodland">Woodland Boots</option>
+              <option value="redchief">Red Chief Leather</option>
+              <option value="campus">Campus</option>
+              <option value="adda">Adda</option>
+              <option value="crocs">Crocs</option>
+              <option value="sports">Other Sports</option>
+              <option value="women">Women's Collection</option>
+              <option value="kids">Kids Collection</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Category Label (for display)</label>
+          <input type="text" id="field-category-label" class="form-control" required placeholder="e.g. Skechers Running" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Price (₹)</label>
+            <input type="number" id="field-price" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Old Price (₹)</label>
+            <input type="number" id="field-old-price" class="form-control" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Badge</label>
+          <input type="text" id="field-badge" class="form-control" required placeholder="e.g. 100% Original" />
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="field-desc" class="form-control" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Sizes (comma separated)</label>
+          <input type="text" id="field-sizes" class="form-control" required placeholder="e.g. 6, 7, 8, 9, 10" />
+        </div>
+
+        <div class="form-group image-selection-group">
+          <label>Product Image</label>
+          
+          <div style="display: flex; gap: 15px; margin-bottom: 10px;">
+            <label style="font-weight: normal; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">
+              <input type="radio" name="image-type" value="existing" checked /> Existing Image
+            </label>
+            <label style="font-weight: normal; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">
+              <input type="radio" name="image-type" value="custom" /> Custom URL
+            </label>
+          </div>
+
+          <div id="existing-img-wrapper">
+            <select id="field-existing-img" class="form-control">
+              <option value="assets/action_school.png">Action School</option>
+              <option value="assets/campus_oxyfit.png">Campus Oxyfit</option>
+              <option value="assets/crocs_flip.png">Crocs Flip</option>
+              <option value="assets/crocs_pink.png">Crocs Pink Sandal</option>
+              <option value="assets/ethnic_mojari.png">Ethnic Mojari</option>
+              <option value="assets/formal_oxford.png">Formal Oxford</option>
+              <option value="assets/leather_boot.png">Leather Boot</option>
+              <option value="assets/nike_flex.png">Nike Flex</option>
+              <option value="assets/redchief_leather.png">Red Chief Leather</option>
+              <option value="assets/skechers_gowalk.png">Skechers Gowalk</option>
+              <option value="assets/skechers_runner.png">Skechers Runner</option>
+              <option value="assets/sparx_sports.png">Sparx Sports</option>
+              <option value="assets/womens_block_heels.png">Womens Block Heels</option>
+              <option value="assets/woodland_boot.png">Woodland Boot</option>
+            </select>
+          </div>
+
+          <div id="custom-img-wrapper" style="display: none;">
+            <input type="url" id="field-custom-img" class="form-control" placeholder="https://..." />
+            <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 5px;">Paste image URL from Justdial, Google Maps, etc.</p>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%;"><i class="fas fa-save"></i> Save Product</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Loading Overlay for API Saving -->
+  <div id="saving-overlay" class="auth-overlay">
+    <div class="auth-card glass-panel" style="text-align: center;">
+      <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: var(--primary-gold); margin-bottom: 20px;"></i>
+      <h3>Saving to Live Website...</h3>
+      <p style="color: var(--text-muted);">Please wait, this may take a few seconds.</p>
+    </div>
+  </div>
+
+  <script src="manage.js"></script>
+</body>
+</html>
