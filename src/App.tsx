@@ -56,7 +56,7 @@ function App() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Suspense fallback={<div className="h-screen bg-brand-black" />}>
+            <Suspense fallback={<LoadingScreen />}>
               <Navbar />
               <main>
                 <Hero />
