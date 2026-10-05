@@ -5,43 +5,62 @@ import * as THREE from 'three';
 import { motion } from 'framer-motion';
 import ErrorBoundary from '../ErrorBoundary';
 
+// Procedural Premium Cubist Shoe Sculpture (Zero Network Dependencies)
+// White and Gold theme for the Interactive Showcase
 function Shoe(props: any) {
-  const { nodes, materials } = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/shoe-draco/model.gltf') as any;
   const ref = useRef<THREE.Group>(null);
   
-  // Create a stunning white/gold sneaker for this showcase
-  React.useEffect(() => {
-    if (materials) {
-      Object.values(materials).forEach((mat: any) => {
-        // Base white leather
-        if (mat.name === 'laces' || mat.name === 'mesh' || mat.name === 'caps' || mat.name === 'inner' || mat.name === 'patch') {
-          mat.color.setHex(0xffffff);
-          mat.roughness = 0.5;
-        }
-        // Sole
-        if (mat.name === 'sole') {
-          mat.color.setHex(0xeeeeee);
-        }
-        // Gold accents
-        if (mat.name === 'stripes' || mat.name === 'band') {
-          mat.color.setHex(0xd4af37);
-          mat.roughness = 0.1;
-          mat.metalness = 1.0;
-        }
-      });
+  // Subtle auto-rotation
+  useFrame((state) => {
+    if (ref.current) {
+      ref.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.2;
+      ref.current.rotation.z = Math.cos(state.clock.elapsedTime * 0.2) * 0.05;
     }
-  }, [materials]);
+  });
 
   return (
-    <group ref={ref} {...props} dispose={null}>
-      <mesh geometry={nodes.shoe.geometry} material={materials.laces} />
-      <mesh geometry={nodes.shoe_1.geometry} material={materials.mesh} />
-      <mesh geometry={nodes.shoe_2.geometry} material={materials.caps} />
-      <mesh geometry={nodes.shoe_3.geometry} material={materials.inner} />
-      <mesh geometry={nodes.shoe_4.geometry} material={materials.sole} />
-      <mesh geometry={nodes.shoe_5.geometry} material={materials.stripes} />
-      <mesh geometry={nodes.shoe_6.geometry} material={materials.band} />
-      <mesh geometry={nodes.shoe_7.geometry} material={materials.patch} />
+    <group ref={ref} {...props}>
+      {/* Elegant minimalist shoe structure - White & Gold */}
+      
+      {/* Sole (Light Gray) */}
+      <mesh position={[0, -0.3, 0]}>
+        <boxGeometry args={[2.4, 0.08, 0.8]} />
+        <meshPhysicalMaterial color={0xeeeeee} roughness={0.8} />
+      </mesh>
+
+      {/* Heel (Light Gray) */}
+      <mesh position={[-0.9, -0.1, 0]}>
+        <boxGeometry args={[0.5, 0.4, 0.75]} />
+        <meshPhysicalMaterial color={0xeeeeee} roughness={0.8} />
+      </mesh>
+
+      {/* Main Body (Premium White Leather) */}
+      <mesh position={[-0.1, 0.2, 0]}>
+        <boxGeometry args={[1.8, 0.6, 0.78]} />
+        <meshPhysicalMaterial color={0xffffff} roughness={0.2} clearcoat={0.5} />
+      </mesh>
+
+      {/* Toe Box (White, Sloped) */}
+      <mesh position={[0.9, 0.05, 0]} rotation={[0, 0, -Math.PI / 8]}>
+        <boxGeometry args={[0.7, 0.45, 0.78]} />
+        <meshPhysicalMaterial color={0xffffff} roughness={0.2} clearcoat={0.5} />
+      </mesh>
+
+      {/* High Top / Collar (White) */}
+      <mesh position={[-0.5, 0.7, 0]}>
+        <cylinderGeometry args={[0.35, 0.45, 0.6, 32]} />
+        <meshPhysicalMaterial color={0xffffff} roughness={0.5} />
+      </mesh>
+      
+      {/* Decorative Gold Accent Stripe */}
+      <mesh position={[0.2, 0.2, 0.4]} rotation={[0, 0, Math.PI / 6]}>
+        <boxGeometry args={[0.8, 0.05, 0.05]} />
+        <meshPhysicalMaterial color={0xd4af37} metalness={1} roughness={0.1} emissive={0xd4af37} emissiveIntensity={0.2} />
+      </mesh>
+      <mesh position={[0.2, 0.2, -0.4]} rotation={[0, 0, Math.PI / 6]}>
+        <boxGeometry args={[0.8, 0.05, 0.05]} />
+        <meshPhysicalMaterial color={0xd4af37} metalness={1} roughness={0.1} emissive={0xd4af37} emissiveIntensity={0.2} />
+      </mesh>
     </group>
   );
 }
@@ -66,7 +85,7 @@ const InteractiveShowcase = () => {
                 zoom={0.7} 
                 polar={[-0.1, Math.PI / 4]}
               >
-                <Stage environment={null} intensity={0.5} shadows={{ type: 'contact', opacity: 0.8, blur: 3 }}>
+                <Stage environment={null} intensity={0.5} shadows={false}>
                   <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
                     <Shoe />
                   </Float>
