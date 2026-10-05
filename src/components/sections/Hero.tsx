@@ -5,52 +5,65 @@ import { useGLTF, Environment, Float, ContactShadows, PresentationControls } fro
 import * as THREE from 'three';
 import ErrorBoundary from '../ErrorBoundary';
 
-// Premium Shoe Component loading from PMNDRS open assets
-function Shoe(props: any) {
-  const { nodes, materials } = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/shoe-draco/model.gltf') as any;
+// Procedural Premium Cubist Shoe Sculpture (Zero Network Dependencies)
+function ProceduralShoe(props: any) {
   const ref = useRef<THREE.Group>(null);
   
-  // Subtle auto-rotation
+  // Subtle auto-rotation and floating
   useFrame((state) => {
     if (ref.current) {
-      ref.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.1;
+      ref.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.2;
       ref.current.rotation.z = Math.cos(state.clock.elapsedTime * 0.2) * 0.05;
+      ref.current.position.y = Math.sin(state.clock.elapsedTime * 1.5) * 0.1 - 0.2;
     }
   });
 
-  // Customize materials for a more premium look (make it dark/gold)
-  React.useEffect(() => {
-    if (materials) {
-      Object.values(materials).forEach((mat: any) => {
-        if (mat.name === 'laces' || mat.name === 'mesh' || mat.name === 'caps' || mat.name === 'inner' || mat.name === 'sole' || mat.name === 'stripes' || mat.name === 'band' || mat.name === 'patch') {
-          mat.color.setHex(0x111111);
-          mat.roughness = 0.8;
-        }
-        // Add gold accents
-        if (mat.name === 'stripes' || mat.name === 'band') {
-          mat.color.setHex(0xd4af37);
-          mat.roughness = 0.2;
-          mat.metalness = 0.8;
-        }
-      });
-    }
-  }, [materials]);
-
   return (
-    <group ref={ref} {...props} dispose={null}>
-      <mesh geometry={nodes.shoe.geometry} material={materials.laces} />
-      <mesh geometry={nodes.shoe_1.geometry} material={materials.mesh} />
-      <mesh geometry={nodes.shoe_2.geometry} material={materials.caps} />
-      <mesh geometry={nodes.shoe_3.geometry} material={materials.inner} />
-      <mesh geometry={nodes.shoe_4.geometry} material={materials.sole} />
-      <mesh geometry={nodes.shoe_5.geometry} material={materials.stripes} />
-      <mesh geometry={nodes.shoe_6.geometry} material={materials.band} />
-      <mesh geometry={nodes.shoe_7.geometry} material={materials.patch} />
+    <group ref={ref} {...props}>
+      {/* Elegant minimalist shoe structure */}
+      
+      {/* Sole (Gold) */}
+      <mesh position={[0, -0.3, 0]}>
+        <boxGeometry args={[2.4, 0.08, 0.8]} />
+        <meshPhysicalMaterial color={0xd4af37} metalness={1} roughness={0.2} clearcoat={1} />
+      </mesh>
+
+      {/* Heel (Gold) */}
+      <mesh position={[-0.9, -0.1, 0]}>
+        <boxGeometry args={[0.5, 0.4, 0.75]} />
+        <meshPhysicalMaterial color={0xd4af37} metalness={1} roughness={0.2} clearcoat={1} />
+      </mesh>
+
+      {/* Main Body (Matte Black) */}
+      <mesh position={[-0.1, 0.2, 0]}>
+        <boxGeometry args={[1.8, 0.6, 0.78]} />
+        <meshPhysicalMaterial color={0x111111} metalness={0.5} roughness={0.8} />
+      </mesh>
+
+      {/* Toe Box (Matte Black, Sloped) */}
+      <mesh position={[0.9, 0.05, 0]} rotation={[0, 0, -Math.PI / 8]}>
+        <boxGeometry args={[0.7, 0.45, 0.78]} />
+        <meshPhysicalMaterial color={0x111111} metalness={0.5} roughness={0.8} />
+      </mesh>
+
+      {/* High Top / Collar (Glossy Black) */}
+      <mesh position={[-0.5, 0.7, 0]}>
+        <cylinderGeometry args={[0.35, 0.45, 0.6, 32]} />
+        <meshPhysicalMaterial color={0x0a0a0a} metalness={0.8} roughness={0.2} clearcoat={1} />
+      </mesh>
+      
+      {/* Decorative Gold Accent Stripe */}
+      <mesh position={[0.2, 0.2, 0.4]} rotation={[0, 0, Math.PI / 6]}>
+        <boxGeometry args={[0.8, 0.05, 0.05]} />
+        <meshPhysicalMaterial color={0xd4af37} metalness={1} roughness={0.1} emissive={0xd4af37} emissiveIntensity={0.2} />
+      </mesh>
+      <mesh position={[0.2, 0.2, -0.4]} rotation={[0, 0, Math.PI / 6]}>
+        <boxGeometry args={[0.8, 0.05, 0.05]} />
+        <meshPhysicalMaterial color={0xd4af37} metalness={1} roughness={0.1} emissive={0xd4af37} emissiveIntensity={0.2} />
+      </mesh>
     </group>
   );
 }
-
-useGLTF.preload('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/shoe-draco/model.gltf');
 
 const Hero = () => {
   return (
@@ -72,10 +85,14 @@ const Hero = () => {
                 azimuth={[-Math.PI / 4, Math.PI / 4]}
               >
                 <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
-                  <Shoe scale={1.5} position={[0, -0.2, 0]} />
+                  <ProceduralShoe scale={1.5} position={[0, -0.2, 0]} />
                 </Float>
               </PresentationControls>
-              <ContactShadows position={[0, -1.2, 0]} opacity={0.5} scale={10} blur={2.5} far={4} />
+              {/* Simple robust shadow instead of ContactShadows to prevent WebGL crashes */}
+              <mesh position={[0, -1.2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+                <circleGeometry args={[1.5, 32]} />
+                <meshBasicMaterial color="#000000" transparent opacity={0.3} />
+              </mesh>
             </Suspense>
           </Canvas>
         </div>
