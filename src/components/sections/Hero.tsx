@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, Environment, Float, ContactShadows, PresentationControls } from '@react-three/drei';
 import * as THREE from 'three';
+import ErrorBoundary from '../ErrorBoundary';
 
 // Premium Shoe Component loading from PMNDRS open assets
 function Shoe(props: any) {
@@ -56,27 +57,29 @@ const Hero = () => {
     <section className="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-brand-black">
       
       {/* 3D Canvas Background */}
-      <div className="absolute inset-0 z-0 opacity-80 mt-10 md:mt-0">
-        <Canvas camera={{ position: [0, 0, 4], fov: 40 }}>
-          <ambientLight intensity={0.5} />
-          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
-          <Suspense fallback={null}>
-            <Environment preset="city" />
-            <PresentationControls 
-              global 
-              zoom={0.8} 
-              rotation={[0, -Math.PI / 4, 0]} 
-              polar={[-Math.PI / 4, Math.PI / 4]} 
-              azimuth={[-Math.PI / 4, Math.PI / 4]}
-            >
-              <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
-                <Shoe scale={1.5} position={[0, -0.2, 0]} />
-              </Float>
-            </PresentationControls>
-            <ContactShadows position={[0, -1.2, 0]} opacity={0.5} scale={10} blur={2.5} far={4} />
-          </Suspense>
-        </Canvas>
-      </div>
+      <ErrorBoundary>
+        <div className="absolute inset-0 z-0 opacity-80 mt-10 md:mt-0">
+          <Canvas camera={{ position: [0, 0, 4], fov: 40 }}>
+            <ambientLight intensity={0.5} />
+            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
+            <Suspense fallback={null}>
+              <Environment preset="city" />
+              <PresentationControls 
+                global 
+                zoom={0.8} 
+                rotation={[0, -Math.PI / 4, 0]} 
+                polar={[-Math.PI / 4, Math.PI / 4]} 
+                azimuth={[-Math.PI / 4, Math.PI / 4]}
+              >
+                <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
+                  <Shoe scale={1.5} position={[0, -0.2, 0]} />
+                </Float>
+              </PresentationControls>
+              <ContactShadows position={[0, -1.2, 0]} opacity={0.5} scale={10} blur={2.5} far={4} />
+            </Suspense>
+          </Canvas>
+        </div>
+      </ErrorBoundary>
 
       {/* Hero Content Overlay */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col md:flex-row items-center justify-between pointer-events-none mt-20">
