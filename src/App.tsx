@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy loaded components for better performance
 const Hero = lazy(() => import('./components/sections/Hero'));
@@ -45,33 +46,35 @@ function App() {
 
   return (
     <div className="min-h-screen bg-brand-black">
-      <AnimatePresence mode="wait">
-        {loading ? (
-          <LoadingScreen key="loader" />
-        ) : (
-          <motion.div
-            key="content"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Suspense fallback={<LoadingScreen />}>
-              <Navbar />
-              <main>
-                <Hero />
-                <BrandIntro />
-                <CategoryExperience />
-                <InteractiveShowcase />
-                <FeaturedCollection />
-                <WhyChooseUs />
-                <StoreExperience />
-              </main>
-              <Footer />
-            </Suspense>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <ErrorBoundary>
+        <AnimatePresence mode="wait">
+          {loading ? (
+            <LoadingScreen key="loader" />
+          ) : (
+            <motion.div
+              key="content"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Suspense fallback={<LoadingScreen />}>
+                <Navbar />
+                <main>
+                  <Hero />
+                  <BrandIntro />
+                  <CategoryExperience />
+                  <InteractiveShowcase />
+                  <FeaturedCollection />
+                  <WhyChooseUs />
+                  <StoreExperience />
+                </main>
+                <Footer />
+              </Suspense>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </ErrorBoundary>
     </div>
   );
 }
