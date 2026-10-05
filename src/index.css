@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-black text-brand-gray-light font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer components {
+  .premium-btn {
+    @apply relative overflow-hidden bg-brand-gold text-brand-black font-semibold tracking-wide py-3 px-8 transition-transform duration-300 hover:scale-105 active:scale-95;
+  }
+  
+  .premium-btn-outline {
+    @apply relative overflow-hidden border border-brand-gold text-brand-gold font-semibold tracking-wide py-3 px-8 transition-all duration-300 hover:bg-brand-gold hover:text-brand-black active:scale-95;
+  }
+
+  /* Glassmorphism that looks expensive, not cheap */
+  .glass-panel {
+    @apply bg-brand-gray/30 backdrop-blur-md border border-brand-gray-light/10 shadow-2xl;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.brand-dark');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.brand-gray');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.brand-gold');
+}
