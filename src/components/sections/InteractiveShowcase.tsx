@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, Environment, PresentationControls, Stage, Float } from '@react-three/drei';
 import * as THREE from 'three';
 import { motion } from 'framer-motion';
+import ErrorBoundary from '../ErrorBoundary';
 
 function Shoe(props: any) {
   const { nodes, materials } = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/shoe-draco/model.gltf') as any;
@@ -55,23 +56,25 @@ const InteractiveShowcase = () => {
       </div>
 
       <div className="absolute inset-0 z-10 cursor-grab active:cursor-grabbing">
-        <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 5], fov: 45 }}>
-          <Suspense fallback={null}>
-            <Environment preset="studio" />
-            <PresentationControls 
-              speed={1.5} 
-              global 
-              zoom={0.7} 
-              polar={[-0.1, Math.PI / 4]}
-            >
-              <Stage environment={null} intensity={0.5} shadows={{ type: 'contact', opacity: 0.8, blur: 3 }}>
-                <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
-                  <Shoe />
-                </Float>
-              </Stage>
-            </PresentationControls>
-          </Suspense>
-        </Canvas>
+        <ErrorBoundary>
+          <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 5], fov: 45 }}>
+            <Suspense fallback={null}>
+              <Environment preset="studio" />
+              <PresentationControls 
+                speed={1.5} 
+                global 
+                zoom={0.7} 
+                polar={[-0.1, Math.PI / 4]}
+              >
+                <Stage environment={null} intensity={0.5} shadows={{ type: 'contact', opacity: 0.8, blur: 3 }}>
+                  <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
+                    <Shoe />
+                  </Float>
+                </Stage>
+              </PresentationControls>
+            </Suspense>
+          </Canvas>
+        </ErrorBoundary>
       </div>
 
       {/* Interactive Hint */}
